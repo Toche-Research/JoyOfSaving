@@ -1,0 +1,24 @@
+Part 1: residual of the HJB equation at the conjectured solution (r=5%, rho=3%, gamma=2), with the
+        maximization over c done numerically at a = 0.1, 1, 10; z = c/a in %
+  theta=0.2   varsigma=0    : z = 2.8005; max relative HJB residual 8.8e-16; max |numerical maximizer - z| = 2.2e-09 pp
+  theta=0.2   varsigma=0.1  : z = 2.6491; max relative HJB residual 1.4e-13; max |numerical maximizer - z| = 2.0e-10 pp
+  theta=0.2   varsigma=0.15 : z = 2.3804; max relative HJB residual 8.1e-15; max |numerical maximizer - z| = 8.0e-09 pp
+  theta=0.05  varsigma=0.15 : z = 2.6924; max relative HJB residual 1.1e-15; max |numerical maximizer - z| = 2.6e-08 pp
+  theta=0     varsigma=0.15 : z = 2.8750; max relative HJB residual 1.7e-16; max |numerical maximizer - z| = 4.0e-08 pp
+
+Part 2: precautionary response of the growth rate, g(varsigma) - g(0), percentage points; Ramsey value (gamma-1) varsigma^2/2
+  varsigma=0.1: theta=0: 0.500 (tau=0.00); theta=0.05: 0.241 (tau=0.14); theta=0.2: 0.151 (tau=0.25); theta=1: 0.082 (tau=0.39)
+  varsigma=0.15: theta=0: 1.125 (tau=0.00); theta=0.05: 0.658 (tau=0.07); theta=0.2: 0.420 (tau=0.17); theta=1: 0.221 (tau=0.30)
+  varsigma=0.2: theta=0: 2.000 (tau=0.00); theta=0.05: 1.402 (tau=0.02); theta=0.2: 0.977 (tau=0.07); theta=1: 0.528 (tau=0.17)
+
+Part 2b: rho_hat, the pole -rho_hat/gamma of the closed form when rho_hat < 0, the root used, and the finiteness margin
+  varsigma=0.1: rho_hat=2.00%; no pole in (0, r); theta=0: g=1.500%, rho_hat-(1-gamma)g=3.500pp; theta=0.05: g=1.891%, rho_hat-(1-gamma)g=3.891pp; theta=0.2: g=2.351%, rho_hat-(1-gamma)g=4.351pp; theta=1: g=3.082%, rho_hat-(1-gamma)g=5.082pp
+  varsigma=0.15: rho_hat=0.75%; no pole in (0, r); theta=0: g=2.125%, rho_hat-(1-gamma)g=2.875pp; theta=0.05: g=2.308%, rho_hat-(1-gamma)g=3.058pp; theta=0.2: g=2.620%, rho_hat-(1-gamma)g=3.370pp; theta=1: g=3.221%, rho_hat-(1-gamma)g=3.971pp
+  varsigma=0.2: rho_hat=-1.00%; pole at g=0.500%; theta=0: g=3.000%, rho_hat-(1-gamma)g=2.000pp; theta=0.05: g=3.052%, rho_hat-(1-gamma)g=2.052pp; theta=0.2: g=3.176%, rho_hat-(1-gamma)g=2.176pp; theta=1: g=3.528%, rho_hat-(1-gamma)g=2.528pp
+
+Part 3: local sensitivity dg/d(rho_hat) = -dg/d(precaution): theta=0 gives -1/gamma
+  theta=0: dg/drho = -0.500
+  theta=0.05: dg/drho = -0.202
+  theta=0.2: dg/drho = -0.129
+  theta=1: dg/drho = -0.071
+elapsed 0 s

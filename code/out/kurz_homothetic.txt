@@ -1,0 +1,41 @@
+KURZ (1968) p.356, HIS OWN EXAMPLES: felicity over the STOCK, unequal curvatures
+
+  Example 1   computed [6.38, 10.97, 19.63]
+              Kurz p.356 [6.25, 10.75, 19.75]   (reproduced to within 0.25)
+              curvature 0.7 in c against 0.2 in k: NOT homothetic
+
+  Example 2   computed [50.58, 111.6]
+              Kurz p.356 [50.75, 111.75]   (reproduced to within 0.25)
+              curvature 0.4 in c against 0.3 in k: NOT homothetic
+
+==============================================================================
+
+THE SAME EXAMPLES WITH THE TWO CURVATURES MADE EQUAL (homothetic)
+
+  Example 1:  U_k/U_c = (0.2/0.3)(c/k)^gamma
+     gamma=0.2  -> 1 steady state(s): [22.83]
+     gamma=0.3  -> 1 steady state(s): [6.42]
+     gamma=0.4  -> 1 steady state(s): [3.24]
+     gamma=0.7  -> 1 steady state(s): [1.22]
+     gamma=1.0  -> 1 steady state(s): [0.77]
+     gamma=2.0  -> 1 steady state(s): [0.4]
+     gamma=5.0  -> 1 steady state(s): [0.23]
+
+  Example 2:  U_k/U_c = (0.7/0.6)(c/k)^gamma
+     gamma=0.2  -> 1 steady state(s): [4125.9]
+     gamma=0.3  -> 1 steady state(s): [15.47]
+     gamma=0.4  -> 1 steady state(s): [6.06]
+     gamma=0.7  -> 1 steady state(s): [2.11]
+     gamma=1.0  -> 1 steady state(s): [1.38]
+     gamma=2.0  -> 1 steady state(s): [0.8]
+     gamma=5.0  -> 1 steady state(s): [0.55]
+
+==============================================================================
+
+Every homothetic case gives at most one, by the argument of Remark 1 with c/k in place of
+c/s: U_k/U_c = m(c/k) with m increasing; c/k = f(k)/k - n falls strictly with k because f
+is concave with f(0) = 0; f' falls; so phi_2 is strictly decreasing and has at most one
+zero.
+
+Uniqueness is therefore a consequence of homotheticity and not of the flow formulation.
+It holds in the stock model too.  Kurz's multiplicity comes from the unequal curvatures.

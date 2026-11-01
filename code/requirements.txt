@@ -1,0 +1,6 @@
+# The author's environment, in which the shipped outputs were produced: Python 3.13.17.
+# Install with:  pip install -r requirements.txt
+
+numpy==2.5.3
+scipy==1.18.1
+matplotlib==3.11.2

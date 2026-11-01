@@ -1,0 +1,10 @@
+linear: max |z(formula) - z(direct Bellman maximization)| over the table rows = 9.76e-11
+neoclassical theta=0.02: det J by finite differences, h=1e-4..1e-7: -0.00336154, -0.00336154, -0.00336154, -0.00336154; closed form -0.00336154
+neoclassical theta=0.1: det J by finite differences, h=1e-4..1e-7: -0.00264725, -0.00264725, -0.00264725, -0.00264725; closed form -0.00264725
+neoclassical theta=0.5: det J by finite differences, h=1e-4..1e-7: -0.00233345, -0.00233345, -0.00233345, -0.00233345; closed form -0.00233345
+neoclassical theta=0.05: impact saving rate (%) from k0 = 0.5 k_MGR with offset/rtol (1e-7,1e-11), (1e-6,1e-11), (1e-8,1e-11), (1e-7,1e-8): 34.8785, 34.8785, 34.8785, 34.8785
+neoclassical theta=0.2: impact saving rate (%) from k0 = 0.5 k_MGR with offset/rtol (1e-7,1e-11), (1e-6,1e-11), (1e-8,1e-11), (1e-7,1e-8): 44.3893, 44.3893, 44.3893, 44.3893
+neoclassical theta=0.02: |Psi(k*)| = 5.55e-17, k*/k_MGR = 1.334861, lambda* = 0.292296 > 0
+neoclassical theta=0.1: |Psi(k*)| = 1.39e-17, k*/k_MGR = 2.066462, lambda* = 0.208059 > 0
+neoclassical theta=0.5: |Psi(k*)| = 2.08e-17, k*/k_MGR = 3.538498, lambda* = 0.167018 > 0
+neoclassical theta=0.2: max |d lambda/dt (differences) - formula| / max |formula| along the path = 2.92e-05; min lambda = 0.1827
