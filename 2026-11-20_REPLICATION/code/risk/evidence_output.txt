@@ -1,0 +1,78 @@
+Model counterparts of the evidence on the demand for dividend income.
+gamma=2, rho=0.03, theta=0.2 unless stated. Safe asset yields yf; risky asset: income yield yr, expected gain xr, volatility sr.
+
+0. Reproduction of tbl_portfolio (yf=2%, expected return 6%, sr=0.2)
+   yr=0%: Merton 0.5000, joy of saving 0.0888, tau 0.6219
+   yr=2%: Merton 0.5000, joy of saving 0.5000, tau 0.6323
+   yr=4%: Merton 0.5000, joy of saving 0.6554, tau 0.3834
+   yr=6%: Merton 0.5000, joy of saving 0.6392, tau 0.2178
+
+1. The safe yield. Risky asset fixed: yr=4%, xr=2%, sr=0.2; yf varies.
+   yf=1%: Merton 0.6250, joy of saving 0.8033, excess 0.1783, ratio 1.2852, tau 0.3222
+   yf=2%: Merton 0.5000, joy of saving 0.6554, excess 0.1554, ratio 1.3109, tau 0.3834
+   yf=3%: Merton 0.3750, joy of saving 0.4633, excess 0.0883, ratio 1.2354, tau 0.4139
+   yf=4%: Merton 0.2500, joy of saving 0.2500, excess 0.0000, ratio 1.0000, tau 0.3923
+   excess share falls as yf rises: True; ratio falls: False
+   expected excess return held at 4 points: yr = yf + 2%, xr = 2%
+   yf=1%, yr=3%: Merton 0.5000, joy of saving 0.7028, tau 0.4479
+   yf=2%, yr=4%: Merton 0.5000, joy of saving 0.6554, tau 0.3834
+   yf=3%, yr=5%: Merton 0.5000, joy of saving 0.6258, tau 0.3348
+
+2. Volatility. yf=2%, yr=4%, xr=2%; sr varies.
+   sr=0.15: Merton 0.8889, joy of saving 1.0991, ratio 1.2365, tau 0.3211
+   sr=0.20: Merton 0.5000, joy of saving 0.6554, ratio 1.3109, tau 0.3834
+   sr=0.25: Merton 0.3200, joy of saving 0.4388, ratio 1.3712, tau 0.4261
+   sr=0.30: Merton 0.2222, joy of saving 0.3152, ratio 1.4186, tau 0.4557
+   ratio JoS/Merton over sr: ['1.2365', '1.3109', '1.3712', '1.4186']
+
+3. Impatience and theta. yf=2%, yr=4%, xr=2%, sr=0.2.
+   rho=1%: joy of saving 0.5656 (Merton 0.5000), tau 0.2078, c/a 1.581%, h 1.551%
+   rho=2%: joy of saving 0.6089 (Merton 0.5000), tau 0.3033, c/a 1.776%, h 1.442%
+   rho=3%: joy of saving 0.6554 (Merton 0.5000), tau 0.3834, c/a 1.922%, h 1.388%
+   rho=5%: joy of saving 0.7483 (Merton 0.5000), tau 0.4983, c/a 2.140%, h 1.356%
+   rho=8%: joy of saving 0.8774 (Merton 0.5000), tau 0.6015, c/a 2.381%, h 1.373%
+   theta=0.02: joy of saving 0.5824 (Merton 0.5000), tau 0.2479, c/a 2.465%, h 0.700%
+   theta=0.05: joy of saving 0.6077 (Merton 0.5000), tau 0.3010, c/a 2.284%, h 0.931%
+   theta=0.2: joy of saving 0.6554 (Merton 0.5000), tau 0.3834, c/a 1.922%, h 1.388%
+   theta=1: joy of saving 0.7192 (Merton 0.5000), tau 0.4672, c/a 1.396%, h 2.042%
+   theta=5: joy of saving 0.7777 (Merton 0.5000), tau 0.5263, c/a 0.871%, h 2.685%
+   share rises with rho: True; share with theta: ['0.582', '0.608', '0.655', '0.719', '0.778']
+
+4. Two risky assets, equal expected return 6% and volatility 0.2, yields 0% (A) and 4% (B); yf=2%.
+   corr=0.0: Merton (0.5000, 0.5000), weight of B in equity 0.500; joy of saving (0.2567, 0.7433), weight of B 0.743, tau 0.4932, |pi - formula| 7.5e-09; with shares in [0,1]: (0.2567, 0.7433), weight of B 0.743
+   corr=0.5: Merton (0.3333, 0.3333), weight of B in equity 0.500; joy of saving (0.0133, 0.6534), weight of B 0.980, tau 0.3903, |pi - formula| 9.5e-09; with shares in [0,1]: (0.0133, 0.6534), weight of B 0.980
+   corr=0.8: Merton (0.2778, 0.2778), weight of B in equity 0.500; joy of saving (-0.2020, 0.7575), weight of B 1.364, tau 0.2774, |pi - formula| 5.2e-09; with shares in [0,1]: (0.0000, 0.6554), weight of B 1.000
+
+5. The share at high yields (yf=2%, expected return 6%, sr=0.2), step 0.5 points:
+   3.0%: 0.6286, 3.5%: 0.6486, 4.0%: 0.6554, 4.5%: 0.6552, 5.0%: 0.6514, 5.5%: 0.6457, 6.0%: 0.6392
+   fall from the peak to yr=6%: 0.0162, that is 2.5% of the peak share
+
+6. Portfolio dividend yield (PDY) of the equity holding, two stocks with equal expected return 6% and
+   volatility 0.2, yields 0% (A) and 4% (B), yf=2%; Merton PDY = 2% (equal weights). Shares in [0, 1].
+   corr=0.0 rho=1%: shares (0.3388, 0.6612), weight of B 0.661, PDY 2.645%, c/a 1.543%
+   corr=0.0 rho=2%: shares (0.2964, 0.7036), weight of B 0.704, PDY 2.815%, c/a 1.688%
+   corr=0.0 rho=3%: shares (0.2567, 0.7433), weight of B 0.743, PDY 2.973%, c/a 1.816%
+   corr=0.0 rho=4%: shares (0.2194, 0.7806), weight of B 0.781, PDY 3.122%, c/a 1.933%
+   corr=0.0 rho=5%: shares (0.1843, 0.8157), weight of B 0.816, PDY 3.263%, c/a 2.041%
+   corr=0.0 rho=6%: shares (0.1509, 0.8491), weight of B 0.849, PDY 3.396%, c/a 2.142%
+   corr=0.0 rho=8%: shares (0.0888, 0.9112), weight of B 0.911, PDY 3.645%, c/a 2.326%
+   (interior solutions match the two-asset formula to 2e-4)
+   corr=0.0: PDY rises with rho: True; least-squares slope dPDY/d(c/a) over the grid = 1.279; c/a difference giving +0.308 point of PDY = 0.24 points
+   corr=0.5 rho=1%: shares (0.1331, 0.5336), weight of B 0.800, PDY 3.202%, c/a 1.525%
+   corr=0.5 rho=2%: shares (0.0711, 0.5955), weight of B 0.893, PDY 3.573%, c/a 1.730%
+   corr=0.5 rho=3%: shares (0.0133, 0.6534), weight of B 0.980, PDY 3.920%, c/a 1.912%
+   corr=0.5 rho=4%: shares (0.0000, 0.7023), weight of B 1.000, PDY 4.000%, c/a 2.040%
+   corr=0.5 rho=5%: shares (0.0000, 0.7483), weight of B 1.000, PDY 4.000%, c/a 2.140%
+   corr=0.5 rho=6%: shares (0.0000, 0.7928), weight of B 1.000, PDY 4.000%, c/a 2.229%
+   corr=0.5 rho=8%: shares (0.0000, 0.8774), weight of B 1.000, PDY 4.000%, c/a 2.381%
+   (interior solutions match the two-asset formula to 2e-4)
+   corr=0.5: PDY rises with rho: False; least-squares slope dPDY/d(c/a) over the grid = 0.940; c/a difference giving +0.308 point of PDY = 0.33 points
+
+7. Share consumed of a unit of return moved from gain to yield, 1 + dh*/dx at r = 5%, sigma = 0
+   x=0%: theta=0.0001: share 0.007 (saving rate out of income 0.20), theta=0.01: share 0.245 (saving rate out of income 0.25), theta=0.05: share 0.348 (saving rate out of income 0.33), theta=0.2: share 0.354 (saving rate out of income 0.44), theta=1: share 0.286 (saving rate out of income 0.60), theta=5: share 0.186 (saving rate out of income 0.76)
+   x=2%: theta=0.0001: share 0.968 (saving rate out of income 0.02), theta=0.01: share 0.795 (saving rate out of income 0.13), theta=0.05: share 0.673 (saving rate out of income 0.23), theta=0.2: share 0.545 (saving rate out of income 0.37), theta=1: share 0.381 (saving rate out of income 0.56), theta=5: share 0.231 (saving rate out of income 0.73)
+   theta=0.2, x=0%: rho=1%: share 0.202 (saving rate 0.51), rho=2%: share 0.283 (saving rate 0.47), rho=3%: share 0.354 (saving rate 0.44), rho=4%: share 0.412 (saving rate 0.42), rho=5%: share 0.456 (saving rate 0.40)
+   theta=0.2, x=2%: rho=1%: share 0.456 (saving rate 0.40), rho=2%: share 0.509 (saving rate 0.38), rho=3%: share 0.545 (saving rate 0.37), rho=4%: share 0.570 (saving rate 0.36), rho=5%: share 0.588 (saving rate 0.35)
+   check against the article: theta=0.2 gives 0.35 (x=0) and 0.54 (x=2%); article 0.35 and 0.54
+   share falls with theta when x=2%: True; with x=0 the share is not monotone in theta
+

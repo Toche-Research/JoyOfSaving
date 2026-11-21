@@ -1,0 +1,67 @@
+source,location_in_source,quantity,value,unit,sample,quoted_in
+"Rick, Cryder and Loewenstein (2008)",p. 773,respondents asked both statements,316,count,"survey, Pittsburgh sample",article and working paper
+"Rick, Cryder and Loewenstein (2008)",p. 773,correlation between 'saving money is pleasurable for me' and 'spending money is painful for me',0.08,correlation,"survey, Pittsburgh sample",article and working paper
+"Fagereng, Holm, Moll and Natvik (2025)",Figure 1,"saving rate out of income, net of capital gains, across the wealth distribution",7,per cent (approximate),Norwegian administrative data,article and working paper
+"Fagereng, Holm, Moll and Natvik (2025)",Figure 1,"saving rate including capital gains, top 1 per cent",50,per cent (approximate),Norwegian administrative data,article and working paper
+"Baker, Nagel and Wurgler (2007)",Table 2,"effect of a dollar of dividends on nondurable consumption, at a given total return",0.16,dollars per dollar,"Consumer Expenditure Survey, 1988-2001",article and working paper
+"Baker, Nagel and Wurgler (2007)",Table 2,"effect of a dollar of dividends on total expenditure, at a given total return (low)",0.72,dollars per dollar,"Consumer Expenditure Survey, 1988-2001",article and working paper
+"Baker, Nagel and Wurgler (2007)",Table 2,"effect of a dollar of dividends on total expenditure, at a given total return (high)",0.75,dollars per dollar,"Consumer Expenditure Survey, 1988-2001",article and working paper
+"Baker, Nagel and Wurgler (2007)",Table 3,"effect of dividends on total expenditure, first differences",0.093,dollars per dollar,"Consumer Expenditure Survey, 1988-2001",article and working paper
+"Baker, Nagel and Wurgler (2007)",Tables 6 and 9,"withdrawal rate of dividends in excess of capital gains, at a given total return",0.35,rate,"United States brokerage accounts, 1991-1996",article and working paper
+"Baker, Nagel and Wurgler (2007)",Tables 6 and 9,"withdrawal rate of ordinary dividends in excess of capital gains, at a given total return",0.80,rate,"United States brokerage accounts, 1991-1996",article and working paper
+"Baker, Nagel and Wurgler (2007)",p. 269,coefficient on dividends among consumers whose income exceeds their expenditure,0.90,dollars per dollar,Consumer Expenditure Survey,article and working paper
+"Baker, Nagel and Wurgler (2007)",Table 9; p. 233,propensity to withdraw modest ordinary dividends,1,rate,"United States brokerage accounts, 1991-1996",working paper
+"Mueller-Dethard, Reinhardt and Weber (2025)",Table 4,"effect of dividends on total expenditure, replication",0.75,dollars per dollar,"Consumer Expenditure Survey, 1988-2001",article and working paper
+"Mueller-Dethard, Reinhardt and Weber (2025)",Table 4,effect of dividends on total expenditure,0.37,dollars per dollar,"Consumer Expenditure Survey, 2002-2012",article and working paper
+"Mueller-Dethard, Reinhardt and Weber (2025)",p. 1473,share of a dividend withdrawn within a year,0.12,share,"German brokerage accounts, 2007-2011",article and working paper
+"Mueller-Dethard, Reinhardt and Weber (2025)",p. 1473,share of a dividend reinvested,0.80,share,"German brokerage accounts, 2007-2011",article and working paper
+"Brauer, Hackethal and Hanspal (2022)",p. 4804 and Table 3,share of a dividend spent within a week of its receipt,0.14,share,"German bank data, 2017-2019",article and working paper
+"Brauer, Hackethal and Hanspal (2022)",p. 4804 and Table 3,share of a dividend spent within a month of its receipt,0.25,share,"German bank data, 2017-2019",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table III,"share of a dividend spent (low, across groups of financial wealth)",0.39,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table III,"share of a dividend spent (high, across groups of financial wealth)",0.60,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table III,"share of a capital gain spent (low, across groups of financial wealth)",0.03,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table III,"share of a capital gain spent (high, across groups of financial wealth)",0.23,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table VIII,"share of a dividend spent, 70th-90th percentile, at least six months of income in liquid assets",0.51,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Table VIII,"share of a capital gain spent, 70th-90th percentile, at least six months of income in liquid assets",0.04,share,"Swedish register data, 2001-2007",article and working paper
+"Di Maggio, Kermani and Majlesi (2020)",Tables III and IV,share of a dividend saved (low),0.40,share,"Swedish register data, 2001-2007",working paper
+"Di Maggio, Kermani and Majlesi (2020)",Tables III and IV,share of a dividend saved (high),0.61,share,"Swedish register data, 2001-2007",working paper
+"Di Maggio, Kermani and Majlesi (2020)",Tables III and IV,share of a dividend put into stocks (low),0.18,share,"Swedish register data, 2001-2007",working paper
+"Di Maggio, Kermani and Majlesi (2020)",Tables III and IV,share of a dividend put into stocks (high),0.46,share,"Swedish register data, 2001-2007",working paper
+Shefrin and Statman (1984),Table 1,"share of the portfolio held for income, young investors (low)",21,per cent,survey of the clients of a brokerage firm,article and working paper
+Shefrin and Statman (1984),Table 1,"share of the portfolio held for income, young investors (high)",34,per cent,survey of the clients of a brokerage firm,article and working paper
+Shefrin and Statman (1984),Table 1,"share of the portfolio held for income, retired investors (low)",56,per cent,survey of the clients of a brokerage firm,article and working paper
+Shefrin and Statman (1984),Table 1,"share of the portfolio held for income, retired investors (high)",57,per cent,survey of the clients of a brokerage firm,article and working paper
+"Fagereng, Holm and Natvik (2021)",Table 3 and Figure 2,share of a lottery prize spent within the year of winning,0.5,share (approximate),Norwegian lottery winners,working paper
+"Fagereng, Holm and Natvik (2021)",Table 3 and Figure 2,share of a lottery prize spent within five years,0.9,"share (approximate, 'almost 90 per cent')",Norwegian lottery winners,working paper
+"Imbens, Rubin and Sacerdote (2001)",Table 6,"share of the prize received that was saved, after about half the payments",16,per cent (approximate),Massachusetts lottery winners paid in twenty yearly installments,working paper
+"Cesarini, Lindqvist, Notowidigdo and Ostling (2017)",Table 3 and Figure 1,"fall in earnings per year, as a share of the prize",1.1,per cent (approximate),Swedish lottery winners,working paper
+Parker (1999),Table 3,rise in nondurable consumption for each per cent of a predictable rise in take-home pay,0.5,per cent (approximate),"United States, Social Security tax ceiling",working paper
+Parker (1999),Table 6,elasticity of total expenditure to a predictable rise in take-home pay,0.56,elasticity,"United States, Social Security tax ceiling",working paper
+Kueng (2018),Fact 1 and Table IV,share of the annual payment spent on nondurables within a quarter,25,per cent,Alaska Permanent Fund,working paper
+Kueng (2018),Fact 1 and Table IV,"share spent, payment small relative to income",0.86,share,Alaska Permanent Fund,working paper
+Kueng (2018),Fact 1 and Table IV,"share spent, payment large relative to income",0.16,share,Alaska Permanent Fund,working paper
+Havranek (2015),Section 2,estimates of the elasticity of intertemporal substitution collected,2735,count,meta-analysis,working paper
+Havranek (2015),Section 2,studies,169,count,meta-analysis,working paper
+Havranek (2015),Table 2,"mean micro estimate of the elasticity of intertemporal substitution for asset holders, corrected for selective reporting",0.36,elasticity,meta-analysis,working paper
+Havranek (2015),Table 2,"95 per cent confidence interval, lower bound",0.33,elasticity,meta-analysis,working paper
+Havranek (2015),Table 2,"95 per cent confidence interval, upper bound",0.39,elasticity,meta-analysis,working paper
+Havranek (2015),Section 4,calibrations above this value lie outside the bulk of the estimates,0.8,elasticity,meta-analysis,working paper
+Hartzmark and Solomon (2013),Tables 3 and 4,abnormal return in months in which a dividend is predicted,41,basis points a month,United States stocks,working paper
+Hartzmark and Solomon (2013),Tables 3 to 5,reversal over the next 40 days,72,basis points,United States stocks,working paper
+Hartzmark and Solomon (2013),Table 5 and p. 653,one standard deviation of the dividend yield,0.58,percentage points,United States stocks,working paper
+Hartzmark and Solomon (2013),Table 5 and p. 653,abnormal return between announcement and ex-day added by a yield higher by one standard deviation,23.5,basis points,United States stocks,working paper
+Hartzmark and Solomon (2019),Table VIII and p. 2194,rise in the abnormal return for a fall of one standard deviation in the interest rate,5,basis points,United States stocks,working paper
+Hartzmark and Solomon (2019),Table VIII and p. 2194,mean abnormal return of that period,16,basis points,United States stocks,working paper
+Graham and Kumar (2006),Table II,change in portfolio dividend yield per year of age,0.024,percentage points,retail brokerage accounts,working paper
+Graham and Kumar (2006),Table II,change in portfolio dividend yield per thousand dollars of income,0.002,percentage points,retail brokerage accounts,working paper
+Graham and Kumar (2006),Table II,difference in portfolio dividend yield for retired investors,0.326,percentage points,retail brokerage accounts,working paper
+Graham and Kumar (2006),pp. 1315-1316 and 1321,fall in the portfolio yield of investors with high incomes after the 1993 increase in tax rates,0.311,percentage points,retail brokerage accounts,working paper
+Graham and Kumar (2006),p. 1311,holding of dividend-paying stocks by retail investors relative to the market,-6.84,percentage points,retail brokerage accounts,working paper
+Graham and Kumar (2006),p. 1311,holding of dividend-paying stocks by institutions relative to the market,3.80,percentage points,institutions,working paper
+"Becker, Ivkovic and Weisbenner (2011)",p. 665,rise in the dividend yield for a share of residents aged 65 or more higher by one standard deviation,0.23,percentage points,United States firms by county,working paper
+Graham and Isaac (2002),Section 4,respondents who chose twelve-month pay,76,count (of 109),faculty survey,working paper
+Graham and Isaac (2002),Section 4,respondents,109,count,faculty survey,working paper
+Graham and Isaac (2002),Section 4,average value placed on keeping the twelve-month plan,544,dollars,faculty survey,working paper
+Guariglia (2001),as cited in the working paper,share of savers who give no special reason for saving,43,per cent (approximate),British Household Panel Survey,working paper only
+Thaler and Benartzi (2004),Table 2,saving rate before the programme,3.5,per cent,"first implementation of the programme, over 40 months",working paper only
+Thaler and Benartzi (2004),Table 2,saving rate after 40 months in the programme,13.6,per cent,"first implementation of the programme, over 40 months",working paper only

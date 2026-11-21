@@ -1,0 +1,99 @@
+checks: own root and share agree with jos_dividends.py, joy.stock and finite differences
+
+[1] subsidy at theta = 0.2: tau = 0.324232, r/(1-tau) = 0.073990
+wpSubPts           2.4      subsidy in points, r tau/(1-tau), theta=0.2 (2.3989916)
+wpSubMkt           0.48     subsidy as a fraction of the market return, tau/(1-tau) (0.47979831)
+
+[2] share 1 + dh/dx, r = 5%, rho = 3%
+  gamma=2 theta=0.2: all yield 0.354003, two points of gains 0.544898
+  gamma=2.0, all yield, theta=0.2: dh/dy = 0.5172, dh/drho' = -0.1288, dh/dx = -0.6460
+wpHyTwo            0.52     dh*/dy at gamma = 2, all yield, theta = 0.2 (0.51718579)
+wpHrTwo            0.13     -dh*/drho' at gamma = 2, all yield, theta = 0.2 (0.12881106)
+  gamma=0.5, all yield, theta=0.2: dh/dy = 1.5495, dh/drho' = -1.0445, dh/dx = -1.0272
+wpShareRev         -0.03    share at gamma = 0.5, all yield, theta = 0.2 (negative: sign reverses) (-0.027249979)
+wpHyHalf           1.55     dh*/dy at gamma = 0.5, all yield, theta = 0.2 (1.5495033)
+
+[3] table of shares (rows: split, theta; columns: gamma = 1, 2, 3)
+  all yield              theta=0.2   0.0991  0.3540  0.4602   z_R=0.0300,0.0400,0.0433
+  yield 3%, gain 2%      theta=0.2   0.2959  0.5449  0.5668   z_R=0.0300,0.0400,0.0433
+  yield 2%, gain 3%      theta=0.2   0.5000  0.6117  0.5964   z_R=0.0300,0.0400,0.0433
+  yield 2%, gain 3%      theta=0.01  0.9227  0.8659  0.7958   z_R=0.0300,0.0400,0.0433
+wpTblAllYieldGOne  0.10     all yield, theta 0.2, gamma 1 (0.099108137)
+wpTblAllYieldGThree 0.46     all yield, theta 0.2, gamma 3 (0.4602212)
+wpTblEqLo          0.50     yield 2 gain 3, theta 0.2, min over gamma (0.5)
+wpTblEqHi          0.61     yield 2 gain 3, theta 0.2, max over gamma (0.61172001)
+wpTblEqSmallLo     0.80     yield 2 gain 3, theta 0.01, min over gamma (0.79583613)
+wpTblEqSmallHi     0.92     yield 2 gain 3, theta 0.01, max over gamma (0.92274445)
+
+[4] theta set so that active saving out of income, h*/y, is 7 per cent in the split itself; r = 5%
+  all yield          rho=0.05 gamma=1  theta=4.924e-03  share=0.4650  z_R=0.0500 (yield >= z_R)
+  all yield          rho=0.05 gamma=2  theta=6.958e-04  share=0.6403  z_R=0.0500 (yield >= z_R)
+  all yield          rho=0.05 gamma=3  theta=7.401e-05  share=0.7261  z_R=0.0500 (yield < z_R)
+  all yield          rho=0.06 gamma=1  theta=1.600e-02  share=0.7385  z_R=0.0600 (yield < z_R)
+  all yield          rho=0.06 gamma=2  theta=1.437e-03  share=0.7925  z_R=0.0550 (yield < z_R)
+  all yield          rho=0.06 gamma=3  theta=1.240e-04  share=0.8220  z_R=0.0533 (yield < z_R)
+  all yield          rho=0.07 gamma=1  theta=2.407e-02  share=0.8094  z_R=0.0700 (yield < z_R)
+  all yield          rho=0.07 gamma=2  theta=1.987e-03  share=0.8429  z_R=0.0600 (yield < z_R)
+  all yield          rho=0.07 gamma=3  theta=1.616e-04  share=0.8595  z_R=0.0567 (yield < z_R)
+  all yield          rho=0.08 gamma=1  theta=3.020e-02  share=0.8420  z_R=0.0800 (yield < z_R)
+  all yield          rho=0.08 gamma=2  theta=2.409e-03  share=0.8674  z_R=0.0650 (yield < z_R)
+  all yield          rho=0.08 gamma=3  theta=1.908e-04  share=0.8790  z_R=0.0600 (yield < z_R)
+  yield 2%, gain 3%  rho=0.05 gamma=1  theta=4.598e-02  share=0.8903  z_R=0.0500 (yield < z_R)
+  yield 2%, gain 3%  rho=0.05 gamma=2  theta=4.297e-03  share=0.9175  z_R=0.0500 (yield < z_R)
+  yield 2%, gain 3%  rho=0.05 gamma=3  theta=3.517e-04  share=0.9240  z_R=0.0500 (yield < z_R)
+  yield 2%, gain 3%  rho=0.06 gamma=1  theta=5.075e-02  share=0.8996  z_R=0.0600 (yield < z_R)
+  yield 2%, gain 3%  rho=0.06 gamma=2  theta=4.444e-03  share=0.9194  z_R=0.0550 (yield < z_R)
+  yield 2%, gain 3%  rho=0.06 gamma=3  theta=3.578e-04  share=0.9246  z_R=0.0533 (yield < z_R)
+  yield 2%, gain 3%  rho=0.07 gamma=1  theta=5.419e-02  share=0.9053  z_R=0.0700 (yield < z_R)
+  yield 2%, gain 3%  rho=0.07 gamma=2  theta=4.563e-03  share=0.9209  z_R=0.0600 (yield < z_R)
+  yield 2%, gain 3%  rho=0.07 gamma=3  theta=3.629e-04  share=0.9252  z_R=0.0567 (yield < z_R)
+  yield 2%, gain 3%  rho=0.08 gamma=1  theta=5.678e-02  share=0.9093  z_R=0.0800 (yield < z_R)
+  yield 2%, gain 3%  rho=0.08 gamma=2  theta=4.661e-03  share=0.9219  z_R=0.0650 (yield < z_R)
+  yield 2%, gain 3%  rho=0.08 gamma=3  theta=3.673e-04  share=0.9256  z_R=0.0600 (yield < z_R)
+  cross-check: theta calibrated with all yield, applied to yield 2%, gain 3%:
+    rho=0.05 gamma=1 theta=4.924e-03 share=0.9866
+    rho=0.05 gamma=2 theta=6.958e-04 share=0.9648
+    rho=0.05 gamma=3 theta=7.401e-05 share=0.9532
+    rho=0.06 gamma=1 theta=1.600e-02 share=0.9655
+    rho=0.06 gamma=2 theta=1.437e-03 share=0.9523
+    rho=0.06 gamma=3 theta=1.240e-04 share=0.9457
+    rho=0.07 gamma=1 theta=2.407e-02 share=0.9553
+    rho=0.07 gamma=2 theta=1.987e-03 share=0.9462
+    rho=0.07 gamma=3 theta=1.616e-04 share=0.9418
+    rho=0.08 gamma=1 theta=3.020e-02 share=0.9494
+    rho=0.08 gamma=2 theta=2.409e-03 share=0.9425
+    rho=0.08 gamma=3 theta=1.908e-04 share=0.9393
+wpSevenRhoMin      4.3      rho below which a Ramsey consumer with gamma=2 and all yield already saves more than 7% of income (4.3)
+wpSevenThetaAllLo  7.4\times10^{-5} theta range, all yield, low (7.400809e-05)
+wpSevenThetaAllHi  0.03     theta range, all yield, high (0.030197669)
+wpSevenThetaEqLo   3.5\times10^{-4} theta range, equity split, low (0.00035174673)
+wpSevenThetaEqHi   0.06     theta range, equity split, high (0.05677525)
+wpSevenShareAllLo  0.47     share range, all yield, low (0.465)
+wpSevenShareAllHi  0.88     share range, all yield, high (0.87898119)
+wpSevenShareEqLo   0.89     share range, equity split, low (0.89030488)
+wpSevenShareEqHi   0.93     share range, equity split, high (0.92564444)
+wpSevenCrossLo     0.94     all-yield theta applied to equity split, share low (0.93928265)
+wpSevenCrossHi     0.99     all-yield theta applied to equity split, share high (0.98656373)
+wpSavRateBench     44       saving out of income at theta = 0.2, all yield, r 5 rho 3 gamma 2 (43.989916)
+
+[5] interest response: sign of dg/dr - 1/gamma against Phi(g)
+  sign of dg/dr - 1/gamma equals sign of Phi(g*) in 1455 of 1455 cases
+wpCondLhs          4        (r - g_R) g_R times 1e4, calibration (4)
+wpCondRhs          15       r rho times 1e4, calibration (15)
+  calibration: g_dag = 0.020756, theta_dag = 0.151537
+wpThetaDag         0.15     theta at which the response crosses 1/gamma, calibration (0.15153733)
+wpCxLhs            24.75    (r - g_R) g_R x 1e4 at r=10%, rho=1%, gamma=2 (24.75)
+wpCxRhs            10       r rho x 1e4 at r=10%, rho=1% (10)
+wpCxDgDrSmall      0.504    dg/dr at theta = 0.01, counterexample (0.50438973)
+wpCxDgDrB          0.565    dg/dr at theta = 0.2, counterexample (0.56459495)
+  grid: 3 cases with (r - g_R) g_R = r rho exactly (counted as absent, Corollary (iii))
+wpDipAbsent        58       grid cases with gamma > 1, r > rho in which the dip is absent (58)
+wpDipCases         156      grid cases with gamma > 1 and r > rho (156)
+  grid: gamma in {1.5,2,3,5}, r in {2,...,10}%%, rho in {0.5,1,2,3,4}%%, r > rho
+wpBnwFourLo        0.23     four times the BNW first-difference coefficient 0.057 (0.228)
+wpBnwFourHi        0.37     four times the BNW first-difference coefficient 0.093 (0.372)
+
+[6] theta = 0.5: equivalent gain mu = 7.532033, F = 0.882795, F/(1-F) = 7.532033
+  figure: yield 0.050, share at theta=1e-4: 0.0071, at 0.2: 0.3540, at 10: 0.1469
+  figure: yield 0.040, share at theta=1e-4: 0.6535, at 0.2: 0.4563, at 10: 0.1620
+  figure: yield 0.030, share at theta=1e-4: 0.9678, at 0.2: 0.5449, at 10: 0.1789

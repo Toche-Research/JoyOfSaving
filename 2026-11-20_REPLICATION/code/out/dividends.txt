@@ -1,0 +1,71 @@
+== Calibration r=5%, rho=3%, gamma=2 ==
+-- theta=0.05
+x=0.00 y=0.05  h=1.6496%  c/a=3.3504%  |h-h_bellman|=3.1e-11  dh/dx=-0.6524 (fd -0.6524)  dc/d(ya)|r = 1+dh/dx = 0.3476
+x=0.01 y=0.04  h=1.0933%  c/a=2.9067%  |h-h_bellman|=3.6e-11  dh/dx=-0.4636 (fd -0.4636)  dc/d(ya)|r = 1+dh/dx = 0.5364
+x=0.02 y=0.03  h=0.7040%  c/a=2.2960%  |h-h_bellman|=1.2e-10  dh/dx=-0.3266 (fd -0.3266)  dc/d(ya)|r = 1+dh/dx = 0.6734
+   average over 2 points: displacement 0.4728, consumption effect 0.5272
+-- theta=0.2
+x=0.00 y=0.05  h=2.1995%  c/a=2.8005%  |h-h_bellman|=2.2e-11  dh/dx=-0.6460 (fd -0.6460)  dc/d(ya)|r = 1+dh/dx = 0.3540
+x=0.01 y=0.04  h=1.6051%  c/a=2.3949%  |h-h_bellman|=1.3e-13  dh/dx=-0.5437 (fd -0.5437)  dc/d(ya)|r = 1+dh/dx = 0.4563
+x=0.02 y=0.03  h=1.1074%  c/a=1.8926%  |h-h_bellman|=1.5e-10  dh/dx=-0.4551 (fd -0.4551)  dc/d(ya)|r = 1+dh/dx = 0.5449
+   average over 2 points: displacement 0.5461, consumption effect 0.4539
+-- theta=1.0
+x=0.00 y=0.05  h=3.0000%  c/a=2.0000%  |h-h_bellman|=9.6e-13  dh/dx=-0.7143 (fd -0.7143)  dc/d(ya)|r = 1+dh/dx = 0.2857
+x=0.01 y=0.04  h=2.3094%  c/a=1.6906%  |h-h_bellman|=1.1e-12  dh/dx=-0.6667 (fd -0.6667)  dc/d(ya)|r = 1+dh/dx = 0.3333
+x=0.02 y=0.03  h=1.6667%  c/a=1.3333%  |h-h_bellman|=4.6e-11  dh/dx=-0.6190 (fd -0.6190)  dc/d(ya)|r = 1+dh/dx = 0.3810
+   average over 2 points: displacement 0.6667, consumption effect 0.3333
+
+== Ramsey and any U(c,k): problem depends on r only; c=(r-gR)a for Ramsey ==
+x=0.0: Ramsey c/a=4.0000%, active saving s/a = gR - x = 1.0000%  -> dc/dy|r = 0
+x=0.02: Ramsey c/a=4.0000%, active saving s/a = gR - x = -1.0000%  -> dc/dy|r = 0
+
+== Transitory change in the income flow at fixed costate: tau q/(1+tau q) ==
+theta=0.05: tau=0.2063 q=c/s=2.0310  dc/dY=0.2952  elasticity dlnc/dlnY=0.4406
+theta=0.2: tau=0.3242 q=c/s=1.2732  dc/dY=0.2922  elasticity dlnc/dlnY=0.5217
+theta=1.0: tau=0.4444 q=c/s=0.6667  dc/dY=0.2286  elasticity dlnc/dlnY=0.5714
+max over theta of tau q/(1+tau q) and of the elasticity, x=0:
+gamma=1: max dc/dY=0.1000 at theta=0.25; max elasticity=0.3750 at theta=1e+04
+gamma=2: max dc/dY=0.3017 at theta=0.0916; max elasticity=0.6149 at theta=1e+04
+gamma=4: max dc/dY=0.5350 at theta=0.0018; max elasticity=0.7808 at theta=1e+04
+  gamma=2 theta=100: dc/dY=0.0437, tau=0.5930, q=0.07701
+  gamma=2 theta=10000: dc/dY=0.0048, tau=0.6131, q=0.00783
+  gamma=2 theta=1e+06: dc/dY=0.0005, tau=0.6152, q=0.00078
+
+== Inflation: nominal bond, real rate r, cash yield i=r+pi, real gain x=-pi ==
+theta=0.05 pi=0.00: c/a=3.3504% (pi=0: 3.3504%), dc/dpi per unit wealth = 1+dh/dx = 0.3476
+theta=0.05 pi=0.02: c/a=3.7503% (pi=0: 3.3504%), dc/dpi per unit wealth = 1+dh/dx = 0.0987
+theta=0.05 pi=0.04: c/a=3.8684% (pi=0: 3.3504%), dc/dpi per unit wealth = 1+dh/dx = 0.0340
+theta=0.2 pi=0.00: c/a=2.8005% (pi=0: 2.8005%), dc/dpi per unit wealth = 1+dh/dx = 0.3540
+theta=0.2 pi=0.02: c/a=3.3197% (pi=0: 2.8005%), dc/dpi per unit wealth = 1+dh/dx = 0.1783
+theta=0.2 pi=0.04: c/a=3.5729% (pi=0: 2.8005%), dc/dpi per unit wealth = 1+dh/dx = 0.0871
+
+== Di Maggio, Kermani and Majlesi (2020), Table III (IV): dividend minus capital-gain coefficient ==
+5-50: 0.560 - 0.233 = 0.327
+50-70: 0.601 - 0.068 = 0.533
+70-90: 0.512 - 0.037 = 0.475
+90-95: 0.587 - 0.027 = 0.560
+95-100: 0.386 - 0.028 = 0.358
+== Anticipated temporary income change, full dynamic solution vs fixed-costate formula ==
+theta=0.05 dw/Y=0.01: jump dc/dw = 0.2902  formula 0.2952  elasticity = 0.4331 (formula x Y/c = 0.4406)
+theta=0.05 dw/Y=0.07: jump dc/dw = 0.2616  formula 0.2952  elasticity = 0.3901 (formula x Y/c = 0.4406)
+theta=0.2 dw/Y=0.01: jump dc/dw = 0.2890  formula 0.2922  elasticity = 0.5160 (formula x Y/c = 0.5217)
+theta=0.2 dw/Y=0.07: jump dc/dw = 0.2705  formula 0.2922  elasticity = 0.4826 (formula x Y/c = 0.5217)
+
+== Lump payment P within a period, costate fixed: MPC = [c(P) - c(0)]/P ==
+theta=0.2 P/c= 0.01: MPC=0.2903
+theta=0.2 P/c= 0.25: MPC=0.2476
+theta=0.2 P/c= 0.50: MPC=0.2096
+theta=0.2 P/c= 1.00: MPC=0.1540
+theta=0.2 P/c= 2.00: MPC=0.0953
+max within-period MPC over theta (small P), gamma = 2, 4, 6, 10:
+gamma=2: max MPC = 0.3017
+gamma=4: max MPC = 0.5350
+gamma=6: max MPC = 0.6539
+gamma=10: max MPC = 0.7045
+
+== macros ==
+evDivZero      0.35   (0.354003; 1 + dh*/dx at x = 0, theta = 0.2)
+evDivGain      0.54   (0.544898; 1 + dh*/dx at x = 0.02, theta = 0.2)
+evPredMPC      0.29   (0.292200; tau q/(1 + tau q), theta = 0.2)
+evPredElast    0.52   (0.521691; tau q/(1 + tau q) times Y/c, theta = 0.2)
+evPredMPCmax   0.30   (0.301729; max over the growth rate (all theta > 0) of tau q/(1 + tau q), gamma = 2 (theta at the max 0.0918; theta-grid max 0.301729))

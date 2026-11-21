@@ -1,0 +1,268 @@
+A. Temptation with v = psi*u (homothetic), continuous time, gamma=2, rho=3%, r=5%.
+   Plan c = z a; slack: gamma z - kappa y^(1-gamma) z^gamma = rho - (1-gamma) r, kappa = psi/(1+psi);
+   binding (z > y): z = y. Checked against a direct maximization of the reduced HJB.
+   psi      y       z_GP  bind    z check   dz/dy|r     z_JoS  MPCform JoS
+  0.05  0.010   0.010000  True   0.010000    1.0000  0.006758       0.6587
+  0.05  0.020   0.020000  True   0.020000    1.0000  0.013125       0.6117
+  0.05  0.030   0.030000  True   0.030000    1.0000  0.018926       0.5449
+  0.05  0.040   0.040000  True   0.040000    1.0000  0.023949       0.4563
+  0.05  0.045   0.040884 False   0.040884   -0.0205  0.026105       0.4059
+  0.05  0.050   0.040792 False   0.040792   -0.0165  0.028005       0.3540
+  0.20  0.010   0.010000  True   0.010000    1.0000  0.006758       0.6587
+  0.20  0.020   0.020000  True   0.020000    1.0000  0.013125       0.6117
+  0.20  0.030   0.030000  True   0.030000    1.0000  0.018926       0.5449
+  0.20  0.040   0.040000  True   0.040000    1.0000  0.023949       0.4563
+  0.20  0.045   0.043505 False   0.043505   -0.0928  0.026105       0.4059
+  0.20  0.050   0.043095 False   0.043095   -0.0723  0.028005       0.3540
+  1.00  0.010   0.010000  True   0.010000    1.0000  0.006758       0.6587
+  1.00  0.020   0.020000  True   0.020000    1.0000  0.013125       0.6117
+  1.00  0.030   0.030000  True   0.030000    1.0000  0.018926       0.5449
+  1.00  0.040   0.040000  True   0.040000    1.0000  0.023949       0.4563
+  1.00  0.045   0.045000  True   0.045000    1.0000  0.026105       0.4059
+  1.00  0.050   0.050000  True   0.050000    1.0000  0.028005       0.3540
+   (dz/dy at a given r is the MPC out of a shift of the return from gains to yield; JoS at theta=0.2.)
+
+   Sign of dz/dy|r when the rule is slack: sign(1 - gamma) for v = psi*u. Check with gamma = 0.5 and 2:
+   gamma=0.5: y=0.045: z=0.020000 binding=False dz/dy|r=+0.14815
+   gamma=0.5: y=0.05: z=0.020732 binding=False dz/dy|r=+0.14480
+   gamma=2.0: y=0.045: z=0.043505 binding=False dz/dy|r=-0.09285
+   gamma=2.0: y=0.05: z=0.043095 binding=False dz/dy|r=-0.07229
+
+   Welfare against the split of a given return r=5% (a=1): GP-MA W(y) and JoS V(y) (theta=0.2).
+   Bound: W(y) <= constrained Ramsey V0(y) <= Ramsey V_R, equality iff y = z_R = 4%.
+   Ramsey V_R(1) = -591.666667
+      y    W psi=.05     W psi=.2      W psi=1    V0 (rule)        JoS V
+ 0.0050   -2633.3333   -2633.3333   -2633.3333   -2633.3333   -5431.1401
+ 0.0075   -1805.7471   -1805.7471   -1805.7471   -1805.7471   -3690.4641
+ 0.0100   -1395.2381   -1395.2381   -1395.2381   -1395.2381   -2822.6073
+ 0.0125   -1151.8519   -1151.8519   -1151.8519   -1151.8519   -2303.9643
+ 0.0150    -992.3077    -992.3077    -992.3077    -992.3077   -1960.0000
+ 0.0175    -880.9524    -880.9524    -880.9524    -880.9524   -1715.9130
+ 0.0200    -800.0000    -800.0000    -800.0000    -800.0000   -1534.3011
+ 0.0225    -739.6135    -739.6135    -739.6135    -739.6135   -1394.3833
+ 0.0250    -693.9394    -693.9394    -693.9394    -693.9394   -1283.6881
+ 0.0275    -659.3074    -659.3074    -659.3074    -659.3074   -1194.2758
+ 0.0300    -633.3333    -633.3333    -633.3333    -633.3333   -1120.8489
+ 0.0325    -614.4399    -614.4399    -614.4399    -614.4399   -1059.7357
+ 0.0350    -601.5873    -601.5873    -601.5873    -601.5873   -1008.3080
+ 0.0375    -594.1176    -594.1176    -594.1176    -594.1176    -964.6332
+ 0.0400    -591.6667    -591.6667    -591.6667    -591.6667    -927.2562
+ 0.0425    -593.1597    -594.1176    -594.1176    -591.6667    -895.0586
+ 0.0450    -594.8318    -600.6875    -601.5873    -591.6667    -867.1648
+ 0.0475    -596.3259    -607.0780    -614.4399    -591.6667    -842.8786
+ 0.0500    -597.6690    -612.7975    -633.3333    -591.6667    -821.6383
+   argmax_y W for psi=0.05: y*=0.040000 (z_R=0.040000); W(y*)=-591.666667, V_R=-591.666667
+   argmax_y W for psi=0.2: y*=0.040000 (z_R=0.040000); W(y*)=-591.666667, V_R=-591.666667
+   argmax_y W for psi=1.0: y*=0.040000 (z_R=0.040000); W(y*)=-591.666667, V_R=-591.666667
+   Shape of W(y) on a 401-point grid of y in [1%, 5%] (numerical; Prop. (ii) proves only the maximum,
+   and the increase below z_R holds in general because c = y a attains V0(y) there):
+   psi=0.05: peak at y=0.04000, W=-591.666667; strictly increasing below: True; strictly decreasing above: True
+   psi=0.2: peak at y=0.04000, W=-591.666667; strictly increasing below: True; strictly decreasing above: True
+   psi=1.0: peak at y=0.04000, W=-591.666667; strictly increasing below: True; strictly decreasing above: True
+
+B. Finite-difference HJB: rho V = max_{0<c<=y a} F(c,a) + V'(a)(r a - c), upwind (drift >= 0),
+   implicit iteration, log grid, Dirichlet value at the top node from the asymptotic plan.
+   JoS validation y=0.05, x=0.0, N=1500: c/a at a=1.002: HJB 0.028035, closed form 0.028005; max |V/Vex - 1| on a<=10: 6.03e-03; iterations 7
+   JoS validation y=0.05, x=0.0, N=3000: c/a at a=1.001: HJB 0.028020, closed form 0.028005; max |V/Vex - 1| on a<=10: 3.02e-03; iterations 7
+   JoS validation y=0.05, x=0.0, N=6000: c/a at a=1.000: HJB 0.028012, closed form 0.028005; max |V/Vex - 1| on a<=10: 1.51e-03; iterations 7
+   JoS validation y=0.03, x=0.02, N=1500: c/a at a=1.002: HJB 0.018934, closed form 0.018926; max |V/Vex - 1| on a<=10: 5.95e-03; iterations 7
+   JoS validation y=0.03, x=0.02, N=3000: c/a at a=1.001: HJB 0.018930, closed form 0.018926; max |V/Vex - 1| on a<=10: 2.98e-03; iterations 7
+   JoS validation y=0.03, x=0.02, N=6000: c/a at a=1.000: HJB 0.018928, closed form 0.018926; max |V/Vex - 1| on a<=10: 1.49e-03; iterations 7
+
+   Linear temptation v(c) = lambda c, lambda = 2 (u'(c) = c^-2 equals lambda at c = 0.7071).
+   Rule: c <= y a. MPC left/right = one-sided d(c/a)/dy at given r (dy = 0.0005); JoS at theta = 0.2.
+   solved y=0.0295: iterations 6, last change 4.1e-12; binding at top node: True
+   solved y=0.03: iterations 6, last change 4.3e-12; binding at top node: True
+   solved y=0.0305: iterations 6, last change 4.5e-12; binding at top node: True
+   solved y=0.0395: iterations 6, last change 1.0e-11; binding at top node: True
+   solved y=0.04: iterations 6, last change 1.0e-11; binding at top node: True
+   solved y=0.0405: iterations 6, last change 1.1e-11; binding at top node: True
+   solved y=0.0495: iterations 6, last change 2.0e-11; binding at top node: True
+   solved y=0.05: iterations 6, last change 2.4e-11; binding at top node: True
+   grid top 2e3 vs 2e4 at a~0.2: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~1.0: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~5.0: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~50.0: c/a 0.040000 vs 0.040000
+      y        a       c/a  bind  MPC left MPC right   JoS c/a   JoS MPC
+ 0.0300    0.100  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    0.301  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    1.006  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    3.003  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300   10.033  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300   30.144  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300  100.031  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300  300.537  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0400    0.100  0.040000  True    1.0000    0.2008  0.023949    0.4563
+ 0.0400    0.301  0.040000  True    1.0000    0.2114  0.023949    0.4563
+ 0.0400    1.006  0.040000  True    1.0000    0.3313  0.023949    0.4563
+ 0.0400    3.003  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400   10.033  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400   30.144  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400  100.031  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400  300.537  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0500    0.100  0.040101 False    0.0000       nan  0.028005    0.3540
+ 0.0500    0.301  0.040108 False    0.0003       nan  0.028005    0.3540
+ 0.0500    1.006  0.040195 False    0.0031       nan  0.028005    0.3540
+ 0.0500    3.003  0.040889 False    0.0249       nan  0.028005    0.3540
+ 0.0500   10.033  0.047714 False    0.2396       nan  0.028005    0.3540
+ 0.0500   30.144  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500  100.031  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500  300.537  0.050000  True    1.0000       nan  0.028005    0.3540
+   y=0.03: rule binds for all a >= 0.0500 on the grid (slack below)
+   y=0.04: rule binds for all a >= 0.0500 on the grid (slack below)
+   y=0.05: rule binds for all a >= 11.4551 on the grid (slack below)
+
+   Welfare W(a; y) at a given r (linear v): argmax over the split, and the bound W <= V0(rule) <= V_R.
+   a=0.301: W(y) for y=0.010:-4726.731, 0.015:-3383.402, 0.020:-2742.057, 0.025:-2388.096, 0.030:-2185.508, 0.035:-2078.917, 0.040:-2044.766, 0.045:-2044.899, 0.050:-2045.049
+          argmax on grid y=0.040; W<=V0 at every y: True
+   a=1.006: W(y) for y=0.010:-1391.622, 0.015:-989.488, 0.020:-797.497, 0.025:-691.537, 0.030:-630.891, 0.035:-598.982, 0.040:-588.759, 0.045:-589.223, 0.050:-589.715
+          argmax on grid y=0.040; W<=V0 at every y: True
+   a=10.033: W(y) for y=0.010:-109.591, 0.015:-69.256, 0.020:-50.000, 0.025:-39.372, 0.030:-33.289, 0.035:-30.088, 0.040:-29.063, 0.045:-30.008, 0.050:-32.960
+          argmax on grid y=0.040; W<=V0 at every y: True
+
+   Linear temptation v(c) = lambda c, lambda = 40 (u'(c) = c^-2 equals lambda at c = 0.1581).
+   Rule: c <= y a. MPC left/right = one-sided d(c/a)/dy at given r (dy = 0.0005); JoS at theta = 0.2.
+   solved y=0.0295: iterations 6, last change 4.1e-12; binding at top node: True
+   solved y=0.03: iterations 6, last change 4.3e-12; binding at top node: True
+   solved y=0.0305: iterations 6, last change 4.5e-12; binding at top node: True
+   solved y=0.0395: iterations 6, last change 1.0e-11; binding at top node: True
+   solved y=0.04: iterations 6, last change 1.0e-11; binding at top node: True
+   solved y=0.0405: iterations 6, last change 1.1e-11; binding at top node: True
+   solved y=0.0495: iterations 6, last change 1.9e-11; binding at top node: True
+   solved y=0.05: iterations 6, last change 2.3e-11; binding at top node: True
+   grid top 2e3 vs 2e4 at a~0.2: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~1.0: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~5.0: c/a 0.040000 vs 0.040000
+   grid top 2e3 vs 2e4 at a~50.0: c/a 0.040000 vs 0.040000
+      y        a       c/a  bind  MPC left MPC right   JoS c/a   JoS MPC
+ 0.0300    0.100  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    0.301  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    1.006  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300    3.003  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300   10.033  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300   30.144  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300  100.031  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0300  300.537  0.030000  True    1.0000    1.0000  0.018926    0.5449
+ 0.0400    0.100  0.040000  True    1.0000    0.2258  0.023949    0.4563
+ 0.0400    0.301  0.040000  True    1.0000    0.4350  0.023949    0.4563
+ 0.0400    1.006  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400    3.003  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400   10.033  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400   30.144  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400  100.031  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0400  300.537  0.040000  True    1.0000    1.0000  0.023949    0.4563
+ 0.0500    0.100  0.040119 False    0.0006       nan  0.028005    0.3540
+ 0.0500    0.301  0.040268 False    0.0055       nan  0.028005    0.3540
+ 0.0500    1.006  0.041788 False    0.0526       nan  0.028005    0.3540
+ 0.0500    3.003  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500   10.033  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500   30.144  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500  100.031  0.050000  True    1.0000       nan  0.028005    0.3540
+ 0.0500  300.537  0.050000  True    1.0000       nan  0.028005    0.3540
+   y=0.03: rule binds for all a >= 0.0500 on the grid (slack below)
+   y=0.04: rule binds for all a >= 0.0500 on the grid (slack below)
+   y=0.05: rule binds for all a >= 2.5618 on the grid (slack below)
+
+   Welfare W(a; y) at a given r (linear v): argmax over the split, and the bound W <= V0(rule) <= V_R.
+   a=0.301: W(y) for y=0.010:-4726.731, 0.015:-3383.402, 0.020:-2742.057, 0.025:-2388.096, 0.030:-2185.508, 0.035:-2078.917, 0.040:-2044.766, 0.045:-2047.484, 0.050:-2050.401
+          argmax on grid y=0.040; W<=V0 at every y: True
+   a=1.006: W(y) for y=0.010:-1391.622, 0.015:-989.488, 0.020:-797.497, 0.025:-691.537, 0.030:-630.891, 0.035:-598.982, 0.040:-588.759, 0.045:-594.891, 0.050:-603.551
+          argmax on grid y=0.040; W<=V0 at every y: True
+   a=10.033: W(y) for y=0.010:-109.591, 0.015:-69.256, 0.020:-50.000, 0.025:-39.372, 0.030:-33.289, 0.035:-30.088, 0.040:-29.063, 0.045:-30.008, 0.050:-33.113
+          argmax on grid y=0.040; W<=V0 at every y: True
+
+C. Discrete-time GP recursion (annual), value of the rule (illiquid principal) against a liquid principal.
+   W(a) = max_{c<=m(a)} {u(c)+v(c)+delta W(R a - c)} - v(m(a)), R = 1+r, delta = exp(-rho);
+   rule: m(a) = y a; liquid: m(a) = R a. Homothetic v = psi*u: W = K a^(1-g)/(1-g) + B, K by fixed point.
+   omega = wealth multiple that makes the liquid consumer as well off as the rule-follower (omega>1: rule valuable).
+   y=0.02 psi=0.00: c/a rule=0.020000 (binds: True), c/a liquid=0.040561, Ramsey c/a=0.040561; omega=0.738052
+   y=0.02 psi=0.05: c/a rule=0.020000 (binds: True), c/a liquid=0.040597, Ramsey c/a=0.040561; omega=0.773528
+   y=0.02 psi=0.20: c/a rule=0.020000 (binds: True), c/a liquid=0.040687, Ramsey c/a=0.040561; omega=0.879951
+   y=0.02 psi=1.00: c/a rule=0.020000 (binds: True), c/a liquid=0.040944, Ramsey c/a=0.040561; omega=1.447458
+   y=0.03 psi=0.00: c/a rule=0.030000 (binds: True), c/a liquid=0.040561, Ramsey c/a=0.040561; omega=0.930215
+   y=0.03 psi=0.05: c/a rule=0.030000 (binds: True), c/a liquid=0.040597, Ramsey c/a=0.040561; omega=0.974929
+   y=0.03 psi=0.20: c/a rule=0.030000 (binds: True), c/a liquid=0.040687, Ramsey c/a=0.040561; omega=1.109060
+   y=0.03 psi=1.00: c/a rule=0.030000 (binds: True), c/a liquid=0.040944, Ramsey c/a=0.040561; omega=1.824327
+   y=0.04 psi=0.00: c/a rule=0.040000 (binds: True), c/a liquid=0.040561, Ramsey c/a=0.040561; omega=0.999801
+   y=0.04 psi=0.05: c/a rule=0.040000 (binds: True), c/a liquid=0.040597, Ramsey c/a=0.040561; omega=1.047860
+   y=0.04 psi=0.20: c/a rule=0.040000 (binds: True), c/a liquid=0.040687, Ramsey c/a=0.040561; omega=1.192025
+   y=0.04 psi=1.00: c/a rule=0.040000 (binds: True), c/a liquid=0.040944, Ramsey c/a=0.040561; omega=1.960798
+   y=0.05 psi=0.00: c/a rule=0.040561 (binds: False), c/a liquid=0.040561, Ramsey c/a=0.040561; omega=1.000000
+   y=0.05 psi=0.05: c/a rule=0.041343 (binds: False), c/a liquid=0.040597, Ramsey c/a=0.040561; omega=1.038670
+   y=0.05 psi=0.20: c/a rule=0.043613 (binds: False), c/a liquid=0.040687, Ramsey c/a=0.040561; omega=1.155692
+   y=0.05 psi=1.00: c/a rule=0.050000 (binds: True), c/a liquid=0.040944, Ramsey c/a=0.040561; omega=1.849660
+
+   C2. Linear temptation v(c) = lambda c (GP Sec. 6 assumptions hold), whole return paid as yield (y = r),
+   so the rule is "never sell principal": a' >= a. Value function iteration with CONTINUOUS choice of c:
+   golden-section search on a natural cubic spline of W in log wealth, extended linearly (with the
+   spline's end slopes) beyond the grid, Howard steps, three grids. Policies and values are evaluated at the exact
+   wealth levels below from the converged spline. (The earlier version restricted next-period wealth to
+   grid nodes, so c/a could take only the values 0.0500, 0.0423, 0.0346, ...; its consumption figures
+   were a grid artefact.) omega = liquid wealth / a that gives the liquid consumer the rule-follower's value.
+   grid [0.001, 10000], 800 points (log step 0.02017):
+   lambda=0: iterations 44,44, last relative change 6.6e-13,7.3e-13; W_liq increasing on the grid: True; W_liq at the top node 33.794
+      a=0.3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=1: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=10: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+   lambda=2: iterations 21,29, last relative change 3.1e-13,4.4e-13; W_liq increasing on the grid: True; W_liq at the top node -360.532
+      a=0.3: c/a rule 0.04057 (binds False), c/a liquid 0.04083, omega 1.0139
+      a=1: c/a rule 0.04065 (binds False), c/a liquid 0.04323, omega 1.1898
+      a=3: c/a rule 0.04133 (binds False), c/a liquid 0.06414, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.04796 (binds False), c/a liquid 0.55615, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=10: iterations 21,29, last relative change 3.1e-13,4.5e-13; W_liq increasing on the grid: True; W_liq at the top node -847.997
+      a=0.3: c/a rule 0.04060 (binds False), c/a liquid 0.04182, omega 1.0742
+      a=1: c/a rule 0.04100 (binds False), c/a liquid 0.05301, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.04404 (binds False), c/a liquid 0.32237, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.82871, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=40: iterations 21,29, last relative change 3.0e-13,4.4e-13; W_liq increasing on the grid: True; W_liq at the top node -1729.829
+      a=0.3: c/a rule 0.04072 (binds False), c/a liquid 0.04518, omega 1.4678
+      a=1: c/a rule 0.04219 (binds False), c/a liquid 0.11252, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.05000 (binds True), c/a liquid 0.68140, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.93934, omega none on the grid (W_rule(a) > W_liq at the top node)
+   grid [0.001, 10000], 1600 points (log step 0.01008):
+   lambda=0: iterations 44,44, last relative change 6.6e-13,8.7e-13; W_liq increasing on the grid: True; W_liq at the top node 33.794
+      a=0.3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=1: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=10: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+   lambda=2: iterations 21,29, last relative change 3.1e-13,4.5e-13; W_liq increasing on the grid: True; W_liq at the top node -360.532
+      a=0.3: c/a rule 0.04057 (binds False), c/a liquid 0.04083, omega 1.0139
+      a=1: c/a rule 0.04065 (binds False), c/a liquid 0.04323, omega 1.1898
+      a=3: c/a rule 0.04133 (binds False), c/a liquid 0.06414, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.04796 (binds False), c/a liquid 0.55615, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=10: iterations 21,29, last relative change 3.0e-13,4.5e-13; W_liq increasing on the grid: True; W_liq at the top node -847.997
+      a=0.3: c/a rule 0.04060 (binds False), c/a liquid 0.04182, omega 1.0742
+      a=1: c/a rule 0.04100 (binds False), c/a liquid 0.05301, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.04404 (binds False), c/a liquid 0.32237, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.82871, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=40: iterations 21,29, last relative change 2.9e-13,4.7e-13; W_liq increasing on the grid: True; W_liq at the top node -1729.829
+      a=0.3: c/a rule 0.04072 (binds False), c/a liquid 0.04518, omega 1.4678
+      a=1: c/a rule 0.04219 (binds False), c/a liquid 0.11252, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.05000 (binds True), c/a liquid 0.68140, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.93934, omega none on the grid (W_rule(a) > W_liq at the top node)
+   grid [0.001, 100000], 1600 points (log step 0.01152):
+   lambda=0: iterations 39,39, last relative change 8.0e-13,6.2e-13; W_liq increasing on the grid: True; W_liq at the top node 33.832
+      a=0.3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=1: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=3: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+      a=10: c/a rule 0.04056 (binds False), c/a liquid 0.04056, omega 1.0000
+   lambda=2: iterations 21,29, last relative change 3.1e-13,4.8e-13; W_liq increasing on the grid: True; W_liq at the top node -360.532
+      a=0.3: c/a rule 0.04057 (binds False), c/a liquid 0.04083, omega 1.0139
+      a=1: c/a rule 0.04065 (binds False), c/a liquid 0.04323, omega 1.1898
+      a=3: c/a rule 0.04133 (binds False), c/a liquid 0.06414, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.04796 (binds False), c/a liquid 0.55615, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=10: iterations 21,29, last relative change 3.1e-13,6.9e-13; W_liq increasing on the grid: True; W_liq at the top node -847.997
+      a=0.3: c/a rule 0.04060 (binds False), c/a liquid 0.04182, omega 1.0742
+      a=1: c/a rule 0.04100 (binds False), c/a liquid 0.05301, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.04404 (binds False), c/a liquid 0.32237, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.82871, omega none on the grid (W_rule(a) > W_liq at the top node)
+   lambda=40: iterations 21,29, last relative change 3.0e-13,8.1e-13; W_liq increasing on the grid: True; W_liq at the top node -1729.829
+      a=0.3: c/a rule 0.04072 (binds False), c/a liquid 0.04518, omega 1.4678
+      a=1: c/a rule 0.04219 (binds False), c/a liquid 0.11252, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=3: c/a rule 0.05000 (binds True), c/a liquid 0.68140, omega none on the grid (W_rule(a) > W_liq at the top node)
+      a=10: c/a rule 0.05000 (binds True), c/a liquid 0.93934, omega none on the grid (W_rule(a) > W_liq at the top node)
+   Ramsey c/a in discrete time (lambda = 0, exact): Rg - (delta Rg)^(1/gamma) = 0.04056
+   Note: with psi > 0 and a slack rule (y=0.05), the rule changes consumption although it does not bind:
+   removing a non-binding constraint changes behavior and welfare (GP 2004, abstract and Sec. 6.3).
+   Under the joy of saving with w'(0)=inf the rule s>=0 never binds and its value is exactly zero.

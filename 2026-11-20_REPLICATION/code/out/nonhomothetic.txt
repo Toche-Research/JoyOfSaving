@@ -1,0 +1,56 @@
+NON-HOMOTHETIC SEPARABLE UTILITY u(c) + theta v(s): CAN THERE BE SEVERAL STEADY STATES?
+
+Paper's calibration: rho=0.03, delta=0.05, alpha=0.3333, gamma=2.0, A=1
+  k_MGR=8.5052  k_GR=17.2133  k_max=89.4427
+
+0. Check: with the paper's utility theta* is strictly increasing on (k_MGR, k_max) and its root
+   equals the steady state of the paper's own solver at theta = 0.05, 0.2, 1 (to 1e-9).
+
+1. Necessary condition (any concave u, v): sigma_c(c(k)) > Gamma(k) for some k in (k_MGR, k_GR).
+   min Gamma = 25.878, at k = 1.504 k_MGR, where tau = 0.238
+   => the EIS 1/sigma_c must fall below 0.0386 at some steady-state consumption level
+   largest elasticity of steady-state consumption in capital on (k_MGR,k_GR): eps_c(k_MGR) = 0.1579
+
+1a. Power utilities, u' = c^-gc, v' = s^-gs (scale free: neither A nor theta matters):
+   several steady states for some theta iff gc > 25.878 when gs = 0 (linear joy of saving)
+                                          iff gc > 47.241 when gs = 2.0
+
+1b. Subsistence: u' = (c - cbar)^-2, v' = s^-2:
+   several steady states for some theta iff cbar > 1.59876 = 98.93 per cent of Ramsey steady-state consumption
+   (96.79 per cent of consumption where the condition first holds, k = 1.1618 k_MGR; local EIS there 0.0161)
+
+1b. Subsistence: u' = (c - cbar)^-1, v' = s^-1:
+   several steady states for some theta iff cbar > 1.61598 = 100.00 per cent of Ramsey steady-state consumption
+   (100.00 per cent of consumption where the condition first holds, k = 1.0000 k_MGR; local EIS there 0.0000)
+   (log case: the bound is Ramsey consumption itself; above it theta* is U-shaped, giving two steady states or none)
+
+1c. Smallest rho/delta at which power utilities give several steady states (gs = curvature of v):
+     alpha   gc   gs=0     gs=0.5
+     0.333  2      3.98    49.96
+     0.333  3      2.83     9.93
+     0.333  4      2.25     5.31
+     0.400  2      2.97    16.96
+     0.400  3      2.14     5.59
+     0.400  4      1.71     3.38
+     0.450  2      2.42     9.93
+     0.450  3      1.75     3.97
+     0.450  4      1.41     2.54
+   (the paper's calibration has rho/delta = 0.60; the ratio, not the levels, matters:
+    at delta = 0.03 the first entry is 3.98 again)
+
+1d. Over rho in [1,6]%, delta in [3,10]%, alpha in [0.25,0.45]: min Gamma = 2.54, at rho=0.060, delta=0.030, alpha=0.45 (the corner).
+
+2. Favourable corner: rho=0.07, delta=0.03, alpha=0.4, u' = c^-3 (EIS 1/3), v(s) = s (linear joy).
+   three steady states iff 0.017469 < theta < 0.017824: a window 2.03 per cent wide
+   at theta = 0.017646 (geometric middle of the window):
+     k = 0.324 k_GR, saving rate 20.3 per cent, tau = 0.410, eigenvalues [-0.00271263  0.07271263], saddle, half-life 256 years
+     k = 0.511 k_GR, saving rate 26.8 per cent, tau = 0.551, eigenvalues [0.00119659 0.06880341], unstable node
+     k = 0.833 k_GR, saving rate 35.8 per cent, tau = 0.665, eigenvalues [-0.00178081  0.07178081], saddle, half-life 389 years
+
+3. Kurz (1968) Example 1 (stock model; rho + delta = 0.3806, delta = 0.01, alpha = 0.45):
+   steady states [6.38, 10.97, 19.63] (Kurz p.356: 6.25, 10.75, 19.75)
+   the flow model with v(s) = s^0.8/0.8 and theta = theta_K delta^0.2/(rho+delta) has the SAME steady states
+   min Gamma at Kurz's parameters = 0.102 (rho/delta = 37.1); his gc = 0.7 clears it
+   with Kurz's curvatures (0.7, 0.2) and his delta, alpha: several steady states iff rho > 0.3558 (he uses 0.3706)
+   with Kurz's curvatures and the paper's delta, alpha: rho_min = nan (none below rho = 10)
+

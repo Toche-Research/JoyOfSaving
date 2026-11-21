@@ -1,0 +1,21 @@
+evHzero                2.20
+evHgain                1.11
+evCzero                2.80
+evCgain                1.89
+evGgain                3.11
+evDisplace             0.55
+evDhDxZero             -0.65
+evDhDxGain             -0.46
+evMargDispZero         0.65
+evMargDispGain         0.46
+evHRamseyGain          -1.00
+evHRamseyZero          1.00
+evGainPct              2
+closed-form dh/dx vs finite difference, max abs error 5.77e-09; range over grid (-0.9978, -0.0022)
+theta=0.2: flow g=0.0220 dg/dr=0.5172; stock theta_K=30.58836 dg/dr=0.7307
+evStockDgDrB           0.731
+theta=0.01: flow g=0.0125 dg/dr=0.4392; stock theta_K=3.52758 dg/dr=0.5584
+evStockDgDrD           0.558
+evThetaEisHi           6.8
+evTauEisHi             0.54
+evEisHi                0.8
